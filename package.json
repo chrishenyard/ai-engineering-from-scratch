@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@types/node": "^26.0.1"
+  },
+  "dependencies": {
+    "pnpm": "^11.9.0"
+  }
+}
