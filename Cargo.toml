@@ -1,0 +1,4 @@
+[workspace]
+resolver = "3"
+members = ["phases/00-setup-and-tooling/01-dev-environment/code"]
+

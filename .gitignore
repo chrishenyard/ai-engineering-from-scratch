@@ -10,6 +10,10 @@ venv/
 dist/
 build/
 .eggs/
+hello
+main
+src/
+target/
 
 .ipynb_checkpoints/
 *.ipynb_metadata/
@@ -63,3 +67,23 @@ catalog.json
 site/sitemap.xml
 site/llms.txt
 site/build-meta.js
+phases/00-setup-and-tooling/01-dev-environment/code/hello-world
+
+
+# Added by cargo
+
+/target
+
+
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target
+
+
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target
