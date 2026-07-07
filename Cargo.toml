@@ -1,4 +1,5 @@
 [workspace]
 resolver = "3"
-members = ["phases/00-setup-and-tooling/01-dev-environment/code"]
-
+members = [
+    "phases/00-setup-and-tooling/01-dev-environment/code",
+    "phases/00-setup-and-tooling/04-apis-and-keys/code"]
