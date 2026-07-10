@@ -12,7 +12,6 @@ build/
 .eggs/
 hello
 main
-src/
 target/
 
 .ipynb_checkpoints/
