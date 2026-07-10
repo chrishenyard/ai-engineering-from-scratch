@@ -1,27 +1,25 @@
-FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
+FROM nvidia/cuda:13.3.0-cudnn-devel-ubuntu24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3.12 \
-    python3.12-venv \
-    python3.12-dev \
-    python3-pip \
+    python3 \
+    python3-venv \
+    python3-dev \
     git \
     curl \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.12 1
+RUN python3 -m venv /opt/venv
 
 RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
 
 RUN python -m pip install --no-cache-dir \
-    torch==2.3.1 \
-    torchvision==0.18.1 \
-    torchaudio==2.3.1 \
-    --index-url https://download.pytorch.org/whl/cu124
+    torch torchvision torchaudio 
 
 RUN python -m pip install --no-cache-dir \
     numpy \
@@ -32,12 +30,15 @@ RUN python -m pip install --no-cache-dir \
     transformers \
     datasets \
     accelerate \
-    safetensors
+    safetensors \
+    flask \
+    fastapi
 
 WORKDIR /workspace
 
 VOLUME ["/workspace", "/models"]
 
 EXPOSE 8888
+EXPOSE 5000
 
-CMD ["python"]
+CMD ["python", "/workspace/00-setup-and-tooling/07-docker-for-ai/code/app.py"]
