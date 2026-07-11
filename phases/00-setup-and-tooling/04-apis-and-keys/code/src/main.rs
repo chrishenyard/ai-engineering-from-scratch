@@ -1,6 +1,5 @@
 use serde::{Deserialize, Serialize};
 use std::process::ExitCode;
-use tokio;
 
 #[derive(Serialize, Deserialize)]
 struct Options {
@@ -60,7 +59,7 @@ struct StreamMessage {
 #[serde(tag = "type", rename_all = "snake_case")]
 enum ContentBlock {
     Thinking,
-    Text 
+    Text
 }
 
 #[derive(Debug, Deserialize)]
