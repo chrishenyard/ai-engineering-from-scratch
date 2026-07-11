@@ -2,5 +2,5 @@
 resolver = "3"
 members = [
     "phases/00-setup-and-tooling/01-dev-environment/code",
-    "phases/00-setup-and-tooling/04-apis-and-keys/code", 
-    "phases/00-setup-and-tooling/07-docker-for-ai/code"]
+    "phases/00-setup-and-tooling/04-apis-and-keys/code",
+    "phases/00-setup-and-tooling/07-docker-for-ai/code/rust"]
